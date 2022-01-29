@@ -1,4 +1,4 @@
-#python script to check for specific IOS version on hosts in host file
+#python script to check for a specific IOS version on hosts
 import getpass
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_command
