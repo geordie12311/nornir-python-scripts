@@ -1,4 +1,4 @@
-from distutils import command
+#simple python script to run a show command on hosts
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_command
 from nornir_utils.plugins.functions import print_result
