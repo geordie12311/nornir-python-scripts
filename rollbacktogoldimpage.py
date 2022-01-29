@@ -1,4 +1,4 @@
-from distutils import command
+#python script used to rollback to a previously saved image held on flash
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_command
 from nornir_utils.plugins.functions import print_result
