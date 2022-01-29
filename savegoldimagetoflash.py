@@ -1,4 +1,4 @@
-from code import interact
+#python script to save the running configuration to flash as a gold image
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_interactive
 from nornir_utils.plugins.functions import print_result
