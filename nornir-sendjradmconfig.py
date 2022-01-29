@@ -1,3 +1,5 @@
+#python script using nornir_scrapli to send configuration from a file
+#called jradmin_config.txt
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_configs_from_file
 from nornir_utils.plugins.functions import print_result
