@@ -1,3 +1,5 @@
+#python script using netmiko plugin send_config to send configuration
+#from a text file "randomconfig.txt"
 from nornir import InitNornir
 from nornir_netmiko.tasks import netmiko_send_config
 from nornir_utils.plugins.functions import print_result
