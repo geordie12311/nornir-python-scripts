@@ -1,3 +1,4 @@
+#simple python script to check connectivity from all hosts to a single IP
 from nornir import InitNornir
 from nornir_napalm.plugins.tasks import napalm_ping
 from nornir_utils.plugins.functions import print_result
