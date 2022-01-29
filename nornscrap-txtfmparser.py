@@ -1,4 +1,4 @@
-#python script usint textfsm and nornir_scrapli to output the show command
+#python script using textfsm and nornir_scrapli to output the show command
 #in this case show clock in a structured data format. 
 import getpass
 from nornir import InitNornir
