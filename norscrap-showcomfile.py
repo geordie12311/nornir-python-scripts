@@ -1,3 +1,4 @@
+#python script to send configuration changes from a text file
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_commands_from_file
 from nornir_utils.plugins.functions import print_result
