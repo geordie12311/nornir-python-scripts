@@ -1,3 +1,4 @@
+#python script using napalm_ping plugin to ping destination over VRF
 from nornir import InitNornir
 from nornir_napalm.plugins.tasks import napalm_ping
 from nornir_utils.plugins.functions import print_result
