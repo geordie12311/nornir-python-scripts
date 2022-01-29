@@ -1,3 +1,5 @@
+#python script using nornir napalm plugin (napalm_ping) to ping 
+#an ip address from all hosts for connectivty checking
 from nornir import InitNornir
 from nornir_napalm.plugins.tasks import napalm_ping
 from nornir_utils.plugins.functions import print_result
