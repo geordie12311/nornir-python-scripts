@@ -1,3 +1,5 @@
+#python script written to ask user to input show command they want to send to hosts
+#it then uses Nornir_scrapli to send the show command entered and output to screen
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_command
 from nornir_utils.plugins.functions import print_result
