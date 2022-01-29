@@ -1,4 +1,4 @@
-#simple python script uing nornir_napalm plugin to get facts and get interface info from hosts
+#simple python script using nornir_napalm plugin to get facts and get interface info from hosts
 from nornir import InitNornir
 from nornir_napalm.plugins.tasks import napalm_get
 from nornir_utils.plugins.functions import print_result
