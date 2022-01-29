@@ -1,0 +1,13 @@
+aaa new-model
+aaa authentication login default local
+aaa authorization exec default local
+enable secret cisco
+parser view restricted
+secret restrict1
+commands exec include all show ip
+commands exec include all show
+commands exec include logout
+commands exec include terminal length 0
+commands exec include terminal width 512
+username jradmin view restricted priv 15 secret jradmin1
+do wr

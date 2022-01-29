@@ -1,0 +1,5 @@
+snmp-server host 10.10.10.150 rw
+snmp-server community gh-lab
+interface gi0/0
+description OOB management interface
+do wr mem

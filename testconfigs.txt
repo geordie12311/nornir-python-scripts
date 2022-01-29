@@ -1,0 +1,3 @@
+ntp server 1.2.3.4
+ntp server 8.8.8.8
+snmp-server community gh-lab ro

@@ -1,0 +1,3 @@
+show ip interface brief
+show cdp neighbor
+show ntp config
