@@ -1,3 +1,5 @@
+#python script using norni_scrapli plugin to send single configuration
+#change to hosts
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_config
 from nornir_utils.plugins.functions import print_result
