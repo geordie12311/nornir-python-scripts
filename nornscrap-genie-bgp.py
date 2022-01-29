@@ -1,4 +1,4 @@
-#Python script to check the uptime using genie parser of BGP neighbors on hosts in host file
+#Python script to check the uptime using genie parser of BGP neighbors on hosts
 import getpass
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_command
