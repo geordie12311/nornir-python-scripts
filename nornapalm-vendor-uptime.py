@@ -1,4 +1,4 @@
- #python script using nornir_napalm getters to get facts
+#python script using nornir_napalm getters to get facts
 #and check vendor and uptime of network devices 
 import getpass
 from nornir import InitNornir
