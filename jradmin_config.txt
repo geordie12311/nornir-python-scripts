@@ -10,4 +10,4 @@ commands exec include logout
 commands exec include terminal length 0
 commands exec include terminal width 512
 username jradmin view restricted priv 15 secret jradmin1
-do wr
+do wr mem

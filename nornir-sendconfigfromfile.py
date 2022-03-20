@@ -1,3 +1,5 @@
+#python script using nornir_scrapli plugin to send multiple configuration changes
+#from a file called config_test.txt
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_configs_from_file
 from nornir_utils.plugins.functions import print_result

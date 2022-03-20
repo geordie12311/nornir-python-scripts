@@ -1,6 +1,5 @@
-#python script using getpass and inventory.defaults.password
-#to avoid saving password anywhere, will prompt for password 
-#before executing command on hosts in host file
+#python script using getpass and inventory.defaults.password to avoid saving password anywhere, 
+#script will prompt for password before executing command on hosts in host file
 import sys
 import getpass
 from nornir import InitNornir

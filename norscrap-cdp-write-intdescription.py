@@ -1,4 +1,4 @@
-#python script to use cdp neighbor information to automatically write descriptions on 
+#python script using nornir_scrapli to use cdp neighbor info to automatically write descriptions on 
 #the host interfaces to show what device it connects to and which remote interface
 import getpass
 from nornir import InitNornir

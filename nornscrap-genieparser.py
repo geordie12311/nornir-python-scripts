@@ -1,4 +1,4 @@
-#python script usint genie parser and nornir_scrapli to output the show command
+#python script using genie parser and nornir_scrapli to output the show command
 #in this case show ip interface in structured data format. 
 import getpass
 from nornir import InitNornir

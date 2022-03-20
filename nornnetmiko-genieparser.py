@@ -1,4 +1,4 @@
-#python script using genie parser and nornir_netmiko to output the show command
+#python script using genie parser and nornir_netmiko to output the details of a show command
 #in this case show clock in a structured data format. 
 import getpass
 from nornir import InitNornir

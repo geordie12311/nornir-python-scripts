@@ -1,3 +1,5 @@
+#python script using nornir_scrapli to send config change
+#to hosts will prompt for password
 import getpass
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_config

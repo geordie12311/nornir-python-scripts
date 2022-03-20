@@ -1,3 +1,5 @@
+#python script using nornir_scrapli to send multiple show commands
+#user will be prompted to add show commands on screen
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_command
 from nornir_utils.plugins.functions import print_result

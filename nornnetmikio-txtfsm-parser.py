@@ -1,5 +1,5 @@
-#python script usint textfsm and nornir_netmiko to output the show command
-#in this case show clock in a structured data format. 
+#python script using textfsm and nornir_netmiko to output the show command
+#this script is using the command "show clock" to output structured data format. 
 import getpass
 from nornir import InitNornir
 from nornir_netmiko.tasks import netmiko_send_command

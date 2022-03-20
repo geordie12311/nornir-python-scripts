@@ -1,4 +1,5 @@
-#python script to use a username and password that has been saved in the ./bashrc file
+#python script which will look for the username and password
+#saved in the ./bashrc file to avoid putting creds in scripts
 import os 
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_command

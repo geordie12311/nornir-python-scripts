@@ -1,4 +1,4 @@
-#python script to print out cdp neighbor information for all hosts in host file
+#python script to print out cdp neighbor information for all hosts
 import getpass
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_command

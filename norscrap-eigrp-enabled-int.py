@@ -1,4 +1,5 @@
-#Python script to check if EIGRP is enabled on a specific interface
+#Python script using nornir_scrapli and structured data to check if EIGRP 
+#is enabled on a specific interface on all hosts
 import getpass
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_command

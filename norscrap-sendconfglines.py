@@ -1,3 +1,4 @@
+#python script using nornir_scrapli to send config lines to hosts
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_configs
 from nornir_utils.plugins.functions import print_result
