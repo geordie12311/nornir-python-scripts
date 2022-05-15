@@ -1,0 +1,23 @@
+---
+
+cisco_ios_group:
+  platform: "ios"
+
+ios_routers_group:
+  platform: "ios"
+
+Switches_group:
+  platform: "ios"
+
+North_group: {}
+
+South_group: {}
+
+vEOS_group:
+  platform: "arista_eos"
+
+Arista_group:
+  platform: "arista_eos"
+
+vyos_group:
+  platform: "vyos"

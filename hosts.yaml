@@ -1,0 +1,78 @@
+---
+R1:
+  hostname: “12.12.12.2”
+  groups:
+    -	ios_routers
+    -	cisco_ios
+    - North
+  data:
+    loopback0 “1.1.1.1”
+
+R2:
+  hostname: “12.12.12.3”
+  groups:
+    -	ios_routers
+    -	cisco_ios
+    - South
+  data:
+    loopback0 “2.2.2.2.2”
+
+R3:
+  hostname: “12.12.12.4”
+  groups:
+    -	ios_routers
+    -	cisco_ios
+    - North
+  data:
+    loopback0 “3.3.3.3”
+
+R4:
+  hostname: “12.12.12.5”
+  groups:
+    -	ios_routers
+    -	cisco_ios
+    - South
+  data:
+    loopback0 “4.4.4.4”
+
+can-sw1:
+  hostname: “12.12.12.14”
+  groups:
+    -	Switches
+    -	cisco_ios
+    - Canada
+  data:
+
+can-sw2:
+  hostname: “12.12.12.15”
+  groups:
+    -	Switches
+    -	cisco_ios
+    - Canada
+  data:
+
+vyos-1:
+  hostname: “12.12.12.10"
+  groups:"
+    -	vyos
+  data:
+
+vyos-2:
+  hostname: “12.12.12.11"
+  groups:
+    -	vyos
+  data:
+
+EOS-1:
+  hostname: “12.12.12.16"
+  groups:
+    -	vEOS
+    - Arista
+  data:
+
+EOS-2:
+  hostname: “12.12.12.17"
+  groups:
+    -	vEOS
+    - Arista
+  data:
