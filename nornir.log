@@ -381,3 +381,4 @@ scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than o
 
 2022-05-15 15:16:35,505 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show run'} on 6 hosts
 2022-05-15 15:16:53,713 -  nornir.core -     INFO -        run() - Running task 'pull_interfaces_info' with args {} on 6 hosts
+2022-05-15 15:19:46,050 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 6 hosts
