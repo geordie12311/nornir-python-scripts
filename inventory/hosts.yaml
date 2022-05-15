@@ -1,0 +1,30 @@
+---
+R1:
+    hostname: "12.12.12.2"
+    groups:
+        - IOS_group
+
+R2:
+    hostname: "12.12.12.3"
+    groups:
+        - IOS_group
+
+R3:
+  hostname: "12.12.12.4"
+  groups:
+       - IOS_group
+
+R4:
+  hostname: "12.12.12.5"
+  groups:
+      - IOS_group
+
+can-sw1:
+  hostname: "12.12.12.14"
+  groups:
+      - IOS_group
+
+can-sw2:
+  hostname: "12.12.12.15"
+  groups:
+      - IOS_group
