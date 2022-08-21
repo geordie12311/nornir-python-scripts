@@ -5510,3 +5510,1421 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
 
 
 2022-08-21 10:23:05,467 -  nornir.core -     INFO -        run() - Running task 'ping_test' with args {} on 8 hosts
+2022-08-21 11:03:40,155 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 8 hosts
+2022-08-21 11:03:40,670 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2022-08-21 11:03:40,671 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/nornscrap-genieparser.py", line 16, in test_this
+    interfaces_result = task.run(task=send_command, command="show ip interface")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 11:03:40,689 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2022-08-21 11:03:40,689 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/nornscrap-genieparser.py", line 16, in test_this
+    interfaces_result = task.run(task=send_command, command="show ip interface")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 11:03:40,723 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2022-08-21 11:03:40,724 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/nornscrap-genieparser.py", line 16, in test_this
+    interfaces_result = task.run(task=send_command, command="show ip interface")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 11:03:40,735 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2022-08-21 11:03:40,735 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/nornscrap-genieparser.py", line 16, in test_this
+    interfaces_result = task.run(task=send_command, command="show ip interface")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 11:03:40,776 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2022-08-21 11:03:40,776 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/nornscrap-genieparser.py", line 16, in test_this
+    interfaces_result = task.run(task=send_command, command="show ip interface")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 11:03:40,777 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2022-08-21 11:03:40,777 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/nornscrap-genieparser.py", line 16, in test_this
+    interfaces_result = task.run(task=send_command, command="show ip interface")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 11:03:40,791 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2022-08-21 11:03:40,791 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/nornscrap-genieparser.py", line 16, in test_this
+    interfaces_result = task.run(task=send_command, command="show ip interface")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 11:31:48,759 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 8 hosts
+2022-08-21 11:34:02,957 -  nornir.core -     INFO -        run() - Running task 'show_cmd_test' with args {} on 8 hosts
+2022-08-21 11:34:32,444 -  nornir.core -     INFO -        run() - Running task 'lldp_map' with args {} on 8 hosts
+2022-08-21 11:34:34,384 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_interface_description.py", line 18, in lldp_map
+    interfaces = outer['interfaces']
+TypeError: string indices must be integers
+
+2022-08-21 11:36:12,267 -  nornir.core -     INFO -        run() - Running task 'lldp_map' with args {} on 8 hosts
+2022-08-21 11:36:14,176 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_interface_description.py", line 18, in lldp_map
+    interfaces = outer['interfaces']
+TypeError: string indices must be integers
+
+2022-08-21 11:37:11,515 -  nornir.core -     INFO -        run() - Running task 'show_cmd_test' with args {} on 8 hosts
+2022-08-21 11:38:57,273 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 8 hosts
+2022-08-21 11:40:06,249 -  nornir.core -     INFO -        run() - Running task 'pull_structured_data' with args {} on 8 hosts
+2022-08-21 11:40:07,667 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-cdp-neigh.py", line 16, in pull_structured_data
+    cdp_index = task.host["facts"]["cdp"]["index"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:40:55,352 -  nornir.core -     INFO -        run() - Running task 'pull_structured_data' with args {} on 8 hosts
+2022-08-21 11:40:56,916 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-cdp-write-intdescription.py", line 17, in pull_structured_data
+    cdp_index = task.host["facts"]["cdp"]["index"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:42:25,544 -  nornir.core -     INFO -        run() - Running task 'pull_structured_data' with args {} on 8 hosts
+2022-08-21 11:42:30,275 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-08-21 11:42:30,275 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-cdp-write-intdescription.py", line 15, in pull_structured_data
+    cdp_result = task.run(task=send_command, command="show cdp neighbor")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 11:42:30,306 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-08-21 11:42:30,306 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-cdp-write-intdescription.py", line 15, in pull_structured_data
+    cdp_result = task.run(task=send_command, command="show cdp neighbor")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 11:42:30,359 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-08-21 11:42:30,359 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-cdp-write-intdescription.py", line 15, in pull_structured_data
+    cdp_result = task.run(task=send_command, command="show cdp neighbor")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 11:42:30,372 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-08-21 11:42:30,372 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-cdp-write-intdescription.py", line 15, in pull_structured_data
+    cdp_result = task.run(task=send_command, command="show cdp neighbor")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 11:42:30,429 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-08-21 11:42:30,430 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-cdp-write-intdescription.py", line 15, in pull_structured_data
+    cdp_result = task.run(task=send_command, command="show cdp neighbor")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 11:42:30,436 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-08-21 11:42:30,436 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-cdp-write-intdescription.py", line 15, in pull_structured_data
+    cdp_result = task.run(task=send_command, command="show cdp neighbor")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 11:42:30,447 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-08-21 11:42:30,447 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-cdp-write-intdescription.py", line 15, in pull_structured_data
+    cdp_result = task.run(task=send_command, command="show cdp neighbor")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 11:42:30,483 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-08-21 11:42:30,484 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-cdp-write-intdescription.py", line 15, in pull_structured_data
+    cdp_result = task.run(task=send_command, command="show cdp neighbor")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 11:42:40,287 -  nornir.core -     INFO -        run() - Running task 'pull_structured_data' with args {} on 8 hosts
+2022-08-21 11:42:42,325 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-cdp-write-intdescription.py", line 17, in pull_structured_data
+    cdp_index = task.host["facts"]["cdp"]["index"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:54:26,141 -  nornir.core -     INFO -        run() - Running task 'ping_test' with args {} on 8 hosts
+2022-08-21 11:55:39,437 -  nornir.core -     INFO -        run() - Running task 'pull_structured_data' with args {} on 8 hosts
+2022-08-21 11:55:41,109 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-version-check.py", line 15, in pull_structured_data
+    version = task.host["facts"]["version"]["version_short"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:55:41,392 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-version-check.py", line 15, in pull_structured_data
+    version = task.host["facts"]["version"]["version_short"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:55:41,395 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-version-check.py", line 15, in pull_structured_data
+    version = task.host["facts"]["version"]["version_short"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:55:41,400 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-version-check.py", line 15, in pull_structured_data
+    version = task.host["facts"]["version"]["version_short"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:55:41,400 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-version-check.py", line 15, in pull_structured_data
+    version = task.host["facts"]["version"]["version_short"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:55:41,494 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-version-check.py", line 15, in pull_structured_data
+    version = task.host["facts"]["version"]["version_short"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:55:41,506 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-version-check.py", line 15, in pull_structured_data
+    version = task.host["facts"]["version"]["version_short"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:55:41,520 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-version-check.py", line 15, in pull_structured_data
+    version = task.host["facts"]["version"]["version_short"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:56:21,797 -  nornir.core -     INFO -        run() - Running task 'pull_structured_data' with args {} on 8 hosts
+2022-08-21 11:56:23,628 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-version-check.py", line 15, in pull_structured_data
+    version = task.host["facts"]["version"]["version_short"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:56:23,914 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-version-check.py", line 15, in pull_structured_data
+    version = task.host["facts"]["version"]["version_short"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:56:23,914 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-version-check.py", line 15, in pull_structured_data
+    version = task.host["facts"]["version"]["version_short"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:56:23,917 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-version-check.py", line 15, in pull_structured_data
+    version = task.host["facts"]["version"]["version_short"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:56:23,917 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-version-check.py", line 15, in pull_structured_data
+    version = task.host["facts"]["version"]["version_short"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:56:23,917 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-version-check.py", line 15, in pull_structured_data
+    version = task.host["facts"]["version"]["version_short"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:56:23,918 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-version-check.py", line 15, in pull_structured_data
+    version = task.host["facts"]["version"]["version_short"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 11:56:23,919 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'pull_structured_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-version-check.py", line 15, in pull_structured_data
+    version = task.host["facts"]["version"]["version_short"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:01:49,465 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 8 hosts
+2022-08-21 12:01:52,537 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/mac_hunter.py", line 34, in pull_info
+    print_info(task, intf)
+  File "/home/geordie/nornir-python-scripts/mac_hunter.py", line 60, in print_info
+    version = task.host["verinfo"]["version"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:02:35,807 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 8 hosts
+2022-08-21 12:02:38,813 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/mac_hunter.py", line 38, in pull_info
+    print_info(task, intf)
+  File "/home/geordie/nornir-python-scripts/mac_hunter.py", line 64, in print_info
+    version = task.host["verinfo"]["version"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:03:24,963 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 8 hosts
+2022-08-21 12:03:29,560 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-08-21 12:03:29,560 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/mac_hunter.py", line 29, in pull_info
+    interface_result = task.run(task=send_command, command="show interfaces")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 12:03:29,659 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-08-21 12:03:29,660 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/mac_hunter.py", line 29, in pull_info
+    interface_result = task.run(task=send_command, command="show interfaces")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 12:03:29,742 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-08-21 12:03:29,742 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/mac_hunter.py", line 29, in pull_info
+    interface_result = task.run(task=send_command, command="show interfaces")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 12:03:29,760 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-08-21 12:03:29,760 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/mac_hunter.py", line 29, in pull_info
+    interface_result = task.run(task=send_command, command="show interfaces")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 12:03:29,780 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-08-21 12:03:29,781 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/mac_hunter.py", line 29, in pull_info
+    interface_result = task.run(task=send_command, command="show interfaces")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 12:03:29,892 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-08-21 12:03:29,892 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/mac_hunter.py", line 29, in pull_info
+    interface_result = task.run(task=send_command, command="show interfaces")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 12:03:29,902 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-08-21 12:03:29,903 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/mac_hunter.py", line 29, in pull_info
+    interface_result = task.run(task=send_command, command="show interfaces")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 12:03:29,910 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-08-21 12:03:29,910 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/mac_hunter.py", line 29, in pull_info
+    interface_result = task.run(task=send_command, command="show interfaces")
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-08-21 12:03:41,409 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 8 hosts
+2022-08-21 12:03:44,573 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/mac_hunter.py", line 38, in pull_info
+    print_info(task, intf)
+  File "/home/geordie/nornir-python-scripts/mac_hunter.py", line 64, in print_info
+    version = task.host["verinfo"]["version"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:07,071 -  nornir.core -     INFO -        run() - Running task 'get_routes' with args {} on 8 hosts
+2022-08-21 12:05:09,211 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:09,212 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:09,215 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:09,217 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:09,217 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:09,217 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:09,218 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:09,219 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:24,383 -  nornir.core -     INFO -        run() - Running task 'get_routes' with args {} on 8 hosts
+2022-08-21 12:05:26,006 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:26,080 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:26,254 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:26,260 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:26,260 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:26,260 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:26,261 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:26,263 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:45,505 -  nornir.core -     INFO -        run() - Running task 'get_routes' with args {} on 8 hosts
+2022-08-21 12:05:46,951 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:47,059 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:47,060 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:47,193 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:47,202 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:47,209 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:47,227 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:05:47,331 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/Route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:08:13,517 -  nornir.core -     INFO -        run() - Running task 'get_routes' with args {} on 8 hosts
+2022-08-21 12:08:15,410 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/ip_route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:08:15,664 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/ip_route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:08:15,671 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/ip_route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:08:15,671 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/ip_route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:08:15,672 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/ip_route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:08:15,672 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/ip_route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:08:15,672 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/ip_route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:08:15,713 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'get_routes' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/ip_route_checker.py", line 26, in get_routes
+    prefixes = task.host["facts"]["default"]["address_family"]["ipv4"]["routes"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:13:01,985 -  nornir.core -     INFO -        run() - Running task 'get_ip' with args {} on 8 hosts
+2022-08-21 12:13:03,677 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'get_ip' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/linuxpinger.py", line 18, in get_ip
+    interfaces = task.host["facts"]["interface"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:13:04,116 -  nornir.core -     INFO -        run() - Running task 'ping_test' with args {} on 8 hosts
+2022-08-21 12:13:42,195 -  nornir.core -     INFO -        run() - Running task 'get_ip' with args {} on 8 hosts
+2022-08-21 12:13:43,884 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'get_ip' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/linuxpinger.py", line 18, in get_ip
+    interfaces = task.host["facts"]["interface"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:13:44,158 -  nornir.core -     INFO -        run() - Running task 'ping_test' with args {} on 8 hosts
+2022-08-21 12:15:01,326 -  nornir.core -     INFO -        run() - Running task 'get_ip' with args {} on 8 hosts
+2022-08-21 12:15:03,266 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'get_ip' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/linuxpinger.py", line 18, in get_ip
+    interfaces = task.host["facts"]["interface"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-21 12:15:03,583 -  nornir.core -     INFO -        run() - Running task 'ping_test' with args {} on 8 hosts
+2022-08-21 12:16:35,923 -  nornir.core -     INFO -        run() - Running task 'show_cmd_test' with args {} on 8 hosts

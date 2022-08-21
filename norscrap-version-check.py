@@ -13,7 +13,7 @@ def pull_structured_data(task):
     version_result = task.run(task=send_command, command="show version")
     task.host["facts"] = version_result.scrapli_response.genie_parse_output()
     version = task.host["facts"]["version"]["version_short"]
-    if version =="15.7":
+    if version =="15.2":
         rprint(f"{task.host}:[green]Version check passed")
     else:
        rprint(f"{task.host}: [red]Version check failed")

@@ -11,7 +11,7 @@ nr.inventory.defaults.password = password
 #above section is going to prompt the user to put in their password
 
 def show_cmd_test(task):
-    task.run(task=netmiko_send_command, command_string="cdp enable")
+    task.run(task=netmiko_send_command, command_string="show ip int brief")
 #the function is using netmiko_send_command to send a command string to the devices
 results = nr.run(task=show_cmd_test)
 print_result(results)
