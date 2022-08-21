@@ -1,13 +1,15 @@
 """
 Script to automatically add interface descriptions using LLDP
 """
-
+import getpass
 from nornir import InitNornir
-from nornir.plugins.functions.text import print_result
-from nornir.plugins.tasks.networking import netmiko_send_command, netmiko_send_config
+from nornir_utils.plugins.functions import print_result
+from nornir_netmiko.tasks import netmiko_send_command, netmiko_send_config
 
 nr = InitNornir(config_file="config.yaml")
-
+password = getpass.getpass()
+nr.inventory.defaults.password = password
+#above section is going to prompt the user to put in their password
 
 def lldp_map(task):
     r = task.run(task=netmiko_send_command, command_string = "show lldp neighbors", use_genie=True)

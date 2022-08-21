@@ -9,8 +9,5 @@ rprint("[bold red on yellow]*****THIS SCRIPT WILL RUN 'SHOW RUN' COMMAND AND DIS
 #displaying a banner to confirm what the script does to the use
 nr = InitNornir(config_file="config1.yaml")
 
-password = getpass.getpass()
-nr.inventory.defaults.password = password
-
 results = nr = nr.run(task=send_command, command="show run")
 print_result(results)
