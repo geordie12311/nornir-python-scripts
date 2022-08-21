@@ -6928,3 +6928,2098 @@ TypeError: list indices must be integers or slices, not str
 
 2022-08-21 12:15:03,583 -  nornir.core -     INFO -        run() - Running task 'ping_test' with args {} on 8 hosts
 2022-08-21 12:16:35,923 -  nornir.core -     INFO -        run() - Running task 'show_cmd_test' with args {} on 8 hosts
+2022-08-21 15:26:27,168 -  nornir.core -     INFO -        run() - Running task 'lldp_map' with args {} on 8 hosts
+2022-08-21 15:26:30,239 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 435, in connect
+    self._auth(
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 766, in _auth
+    raise saved_exception
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 753, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/transport.py", line 1571, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/auth_handler.py", line 258, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 25.25.25.5:22
+
+
+Authentication failed.
+
+2022-08-21 15:26:30,240 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 435, in connect
+    self._auth(
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 766, in _auth
+    raise saved_exception
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 753, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/transport.py", line 1571, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/auth_handler.py", line 258, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 25.25.25.1:22
+
+
+Authentication failed.
+
+2022-08-21 15:26:30,240 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 435, in connect
+    self._auth(
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 766, in _auth
+    raise saved_exception
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 753, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/transport.py", line 1571, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/auth_handler.py", line 258, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 25.25.25.8:22
+
+
+Authentication failed.
+
+2022-08-21 15:26:30,241 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_map.py", line 14, in lldp_map
+    r = task.run(task=netmiko_send_command, command_string = "show lldp neighbors", use_genie=True)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-08-21 15:26:30,241 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_map.py", line 14, in lldp_map
+    r = task.run(task=netmiko_send_command, command_string = "show lldp neighbors", use_genie=True)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-08-21 15:26:30,242 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_map.py", line 14, in lldp_map
+    r = task.run(task=netmiko_send_command, command_string = "show lldp neighbors", use_genie=True)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-08-21 15:26:36,990 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 435, in connect
+    self._auth(
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 766, in _auth
+    raise saved_exception
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 753, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/transport.py", line 1571, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/auth_handler.py", line 258, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 25.25.25.6:22
+
+
+Authentication failed.
+
+2022-08-21 15:26:36,990 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_map.py", line 14, in lldp_map
+    r = task.run(task=netmiko_send_command, command_string = "show lldp neighbors", use_genie=True)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-08-21 15:26:37,223 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.2:22
+
+
+
+2022-08-21 15:26:37,224 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_map.py", line 14, in lldp_map
+    r = task.run(task=netmiko_send_command, command_string = "show lldp neighbors", use_genie=True)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-08-21 15:26:37,228 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.4:22
+
+
+
+2022-08-21 15:26:37,229 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_map.py", line 14, in lldp_map
+    r = task.run(task=netmiko_send_command, command_string = "show lldp neighbors", use_genie=True)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-08-21 15:26:37,229 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.7:22
+
+
+
+2022-08-21 15:26:37,229 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_map.py", line 14, in lldp_map
+    r = task.run(task=netmiko_send_command, command_string = "show lldp neighbors", use_genie=True)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-08-21 15:26:48,709 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 435, in connect
+    self._auth(
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 766, in _auth
+    raise saved_exception
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 753, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/transport.py", line 1571, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/auth_handler.py", line 258, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 25.25.25.3:22
+
+
+Authentication failed.
+
+2022-08-21 15:26:48,710 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_map.py", line 14, in lldp_map
+    r = task.run(task=netmiko_send_command, command_string = "show lldp neighbors", use_genie=True)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-08-21 15:27:04,071 -  nornir.core -     INFO -        run() - Running task 'lldp_map' with args {} on 8 hosts
+2022-08-21 15:27:14,079 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.4:22
+
+
+
+2022-08-21 15:27:14,079 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_map.py", line 14, in lldp_map
+    r = task.run(task=netmiko_send_command, command_string = "show lldp neighbors", use_genie=True)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-08-21 15:27:14,082 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.2:22
+
+
+
+2022-08-21 15:27:14,082 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_map.py", line 14, in lldp_map
+    r = task.run(task=netmiko_send_command, command_string = "show lldp neighbors", use_genie=True)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-08-21 15:27:14,082 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.6:22
+
+
+
+2022-08-21 15:27:14,083 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_map.py", line 14, in lldp_map
+    r = task.run(task=netmiko_send_command, command_string = "show lldp neighbors", use_genie=True)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-08-21 15:27:17,539 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_map.py", line 17, in lldp_map
+    interfaces = outer['interfaces']
+TypeError: string indices must be integers
+
+2022-08-21 15:27:18,067 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_map.py", line 17, in lldp_map
+    interfaces = outer['interfaces']
+TypeError: string indices must be integers
+
+2022-08-21 15:27:18,067 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_map.py", line 17, in lldp_map
+    interfaces = outer['interfaces']
+TypeError: string indices must be integers
+
+2022-08-21 15:28:49,053 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 8 hosts
+2022-08-21 15:28:59,120 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.2:22
+
+
+
+2022-08-21 15:28:59,120 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.4:22
+
+
+
+2022-08-21 15:28:59,121 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:28:59,121 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:30:53,276 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 8 hosts
+2022-08-21 15:31:03,282 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.4:22
+
+
+
+2022-08-21 15:31:03,282 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:31:03,288 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.2:22
+
+
+
+2022-08-21 15:31:03,289 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:32:22,251 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 8 hosts
+2022-08-21 15:32:32,268 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.2:22
+
+
+
+2022-08-21 15:32:32,269 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.4:22
+
+
+
+2022-08-21 15:32:32,270 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:32:32,270 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:42:36,021 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 8 hosts
+2022-08-21 15:42:46,034 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.3:22
+
+
+
+2022-08-21 15:42:46,034 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:42:46,037 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.8:22
+
+
+
+2022-08-21 15:42:46,038 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:42:46,038 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.6:22
+
+
+
+2022-08-21 15:42:46,039 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:42:47,341 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 2172, in send_config_set
+    output += self.config_mode()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/cisco_base_connection.py", line 49, in config_mode
+    return super().config_mode(
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1999, in config_mode
+    if not self.check_config_mode():
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/cisco/cisco_ios.py", line 55, in check_config_mode
+    return super().check_config_mode(check_string=check_string, pattern=pattern)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/cisco_base_connection.py", line 41, in check_config_mode
+    return super().check_config_mode(check_string=check_string, pattern=pattern)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1977, in check_config_mode
+    output = self.read_until_pattern(pattern=pattern)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: '[>#]' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-21 15:42:47,341 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:42:47,357 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'lldp\\ run' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-21 15:42:47,357 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:42:47,397 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'username\\ test1\\ priv\\ 15\\ secret\\ test123' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-08-21 15:42:47,397 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:43:16,372 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 8 hosts
+2022-08-21 15:43:26,389 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.3:22
+
+
+
+2022-08-21 15:43:26,389 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.8:22
+
+
+
+2022-08-21 15:43:26,389 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.6:22
+
+
+
+2022-08-21 15:43:26,390 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:43:26,390 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:43:26,391 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:46:46,250 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 8 hosts
+2022-08-21 15:46:56,265 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.8:22
+
+
+
+2022-08-21 15:46:56,265 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.6:22
+
+
+
+2022-08-21 15:46:56,266 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 25.25.25.5:22
+
+
+
+2022-08-21 15:46:56,266 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:46:56,266 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:46:56,267 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:46:56,306 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 412, in connect
+    server_key = t.get_remote_server_key()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/transport.py", line 886, in get_remote_server_key
+    raise SSHException("No existing session")
+paramiko.ssh_exception.SSHException: No existing session
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1091, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: Paramiko: 'No existing session' error: try increasing 'conn_timeout' to 15 seconds or larger.
+
+2022-08-21 15:46:56,306 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:46:56,307 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 412, in connect
+    server_key = t.get_remote_server_key()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/transport.py", line 886, in get_remote_server_key
+    raise SSHException("No existing session")
+paramiko.ssh_exception.SSHException: No existing session
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1091, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: Paramiko: 'No existing session' error: try increasing 'conn_timeout' to 15 seconds or larger.
+
+2022-08-21 15:46:56,307 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:46:56,308 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/client.py", line 412, in connect
+    server_key = t.get_remote_server_key()
+  File "/home/geordie/.local/lib/python3.9/site-packages/paramiko/transport.py", line 886, in get_remote_server_key
+    raise SSHException("No existing session")
+paramiko.ssh_exception.SSHException: No existing session
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/geordie/.local/lib/python3.9/site-packages/netmiko/base_connection.py", line 1091, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: Paramiko: 'No existing session' error: try increasing 'conn_timeout' to 15 seconds or larger.
+
+2022-08-21 15:46:56,308 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'send_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/normiko-sendconfiglines.py", line 14, in send_config_test
+    task.run(task=netmiko_send_config, config_commands=[
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-08-21 15:49:10,565 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 8 hosts
+2022-08-21 15:49:11,479 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_configs.py", line 58, in send_configs
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2022-08-21 15:49:11,479 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-sendconfglines.py", line 10, in send_configs_test
+    task.run(task=send_configs, configs=["lldp run"])
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-08-21 15:49:25,871 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_configs.py", line 58, in send_configs
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Timed out connecting to host
+
+2022-08-21 15:49:25,871 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-sendconfglines.py", line 10, in send_configs_test
+    task.run(task=send_configs, configs=["lldp run"])
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-08-21 15:49:25,932 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_configs.py", line 58, in send_configs
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Timed out connecting to host
+
+2022-08-21 15:49:25,932 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-sendconfglines.py", line 10, in send_configs_test
+    task.run(task=send_configs, configs=["lldp run"])
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-08-21 15:49:41,053 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_configs.py", line 58, in send_configs
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 108, in _multiprocessing_timeout
+    return _handle_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 134, in _handle_timeout
+    raise ScrapliTimeout(message)
+scrapli.exceptions.ScrapliTimeout: timed out during in channel ssh authentication
+
+2022-08-21 15:49:41,054 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-sendconfglines.py", line 10, in send_configs_test
+    task.run(task=send_configs, configs=["lldp run"])
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-08-21 15:49:41,077 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_configs.py", line 58, in send_configs
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 108, in _multiprocessing_timeout
+    return _handle_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 134, in _handle_timeout
+    raise ScrapliTimeout(message)
+scrapli.exceptions.ScrapliTimeout: timed out during in channel ssh authentication
+
+2022-08-21 15:49:41,077 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-sendconfglines.py", line 10, in send_configs_test
+    task.run(task=send_configs, configs=["lldp run"])
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-08-21 16:07:48,057 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 8 hosts
+2022-08-21 16:07:48,612 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_configs.py", line 58, in send_configs
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib64/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2022-08-21 16:07:48,612 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-sendconfglines.py", line 10, in send_configs_test
+    task.run(task=send_configs, configs=["lldp run"])
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-08-21 16:11:10,888 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 8 hosts
+2022-08-21 16:11:41,410 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/tasks/core/send_configs.py", line 58, in send_configs
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 108, in _multiprocessing_timeout
+    return _handle_timeout(
+  File "/home/geordie/.local/lib/python3.9/site-packages/scrapli/decorators.py", line 134, in _handle_timeout
+    raise ScrapliTimeout(message)
+scrapli.exceptions.ScrapliTimeout: timed out during in channel ssh authentication
+
+2022-08-21 16:11:41,410 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-sendconfglines.py", line 10, in send_configs_test
+    task.run(task=send_configs, configs=["lldp run"])
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-08-21 16:13:04,552 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 8 hosts
+2022-08-21 16:13:06,202 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-03': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-sendconfglines.py", line 13, in send_configs_test
+    task.run(task=send_configs, configs=["lldp"])
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-08-21 16:13:06,330 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-02': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-sendconfglines.py", line 13, in send_configs_test
+    task.run(task=send_configs, configs=["lldp"])
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-08-21 16:13:06,551 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-01': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-sendconfglines.py", line 13, in send_configs_test
+    task.run(task=send_configs, configs=["lldp"])
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-08-21 16:13:06,557 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-03': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-sendconfglines.py", line 13, in send_configs_test
+    task.run(task=send_configs, configs=["lldp"])
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-08-21 16:13:06,685 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-04': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-sendconfglines.py", line 13, in send_configs_test
+    task.run(task=send_configs, configs=["lldp"])
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-08-21 16:13:06,754 - nornir.core.task -    ERROR -      start() - Host 'NN-SW-01': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-sendconfglines.py", line 13, in send_configs_test
+    task.run(task=send_configs, configs=["lldp"])
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-08-21 16:13:06,766 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-sendconfglines.py", line 13, in send_configs_test
+    task.run(task=send_configs, configs=["lldp"])
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-08-21 16:13:06,803 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-02': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/norscrap-sendconfglines.py", line 13, in send_configs_test
+    task.run(task=send_configs, configs=["lldp"])
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-08-21 16:14:39,959 -  nornir.core -     INFO -        run() - Running task 'lldp_map' with args {} on 8 hosts
+2022-08-21 16:14:42,286 - nornir.core.task -    ERROR -      start() - Host 'SS-SW-04': task 'lldp_map' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/nornir-python-scripts/LLDP_map.py", line 17, in lldp_map
+    interfaces = outer['interfaces']
+TypeError: string indices must be integers
+

@@ -12,8 +12,9 @@ nr.inventory.defaults.password = password
 
 def send_config_test(task):
     task.run(task=netmiko_send_config, config_commands=[
-            "ntp server 8.8.8.8", 
-            "username cisco priv 15 secret cisco123"])
+            "lldp run", 
+            "username test1 priv 15 secret test123"
+            ])
 #function is sending the configuration commands to the hosts
 results = nr.run(task=send_config_test)
 print_result(results)

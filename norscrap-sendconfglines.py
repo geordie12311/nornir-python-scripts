@@ -1,13 +1,16 @@
 #python script using nornir_scrapli to send config lines to hosts
+import getpass
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_configs
 from nornir_utils.plugins.functions import print_result
 #importing send_configs from nornir_scrapli to send a configuration change
 nr = InitNornir(config_file="config.yaml")
+password = getpass.getpass()
+nr.inventory.defaults.password = password
 #The above line is telling nornir where the config file is located
 
 def send_configs_test(task):
-    task.run(task=send_configs, configs=["router ospf 1", "network 0.0.0.0 255.255.255.255 area 1"])
+    task.run(task=send_configs, configs=["lldp"])
 #above function is going to use the send_configs to send a list of configuration commands
 
 results = nr.run(task=send_configs_test)
