@@ -2,3 +2,17 @@
 
 IOS_group:
   platform: "ios"
+
+north_switches:
+  platform: "ios"
+  username: "cisco"
+  password: "cisco123"
+  data:
+    ntp_server: "8.8.8.8"
+
+south_switches:
+  platform: "ios"
+  username: "cisco"
+  password: "cisco123"
+  data:
+    ntp_server: "4.4.4.4"
