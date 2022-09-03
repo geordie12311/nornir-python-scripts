@@ -5,28 +5,20 @@ IOS_group:
 
 north_switches:
   platform: "ios"
-  username: "cisco"
-  password: "cisco123"
   data:
     ntp_server: "8.8.8.8"
 
 south_switches:
   platform: "ios"
-  username: "cisco"
-  password: "cisco123"
   data:
     ntp_server: "4.4.4.4"
 
 Selby_switches:
   platform: "ios"
-  username: "cisco"
-  password: "cisco123"
   data:
     ntp_server: "8.8.8.8"
 
 Opus_switches:
   platform: "ios"
-  username: "cisco"
-  password: "cisco123"
   data:
     ntp_server: "4.4.4.4"
