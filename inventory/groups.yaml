@@ -2,24 +2,19 @@
 
 IOS_group:
   platform: "ios"
-  username: "cisco"
 
 north_switches:
-  platform: "ios"
   data:
     ntp_server: "8.8.8.8"
 
 south_switches:
-  platform: "ios"
   data:
     ntp_server: "4.4.4.4"
 
 Selby_switches:
-  platform: "ios"
   data:
     ntp_server: "8.8.8.8"
 
 Opus_switches:
-  platform: "ios"
   data:
     ntp_server: "4.4.4.4"
