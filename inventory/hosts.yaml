@@ -29,50 +29,99 @@
 #  groups:
 #      - IOS_group
 
-NN-SW-01:
-  hostname: "25.25.25.1"
-  groups:
-    - IOS_group
-    - North_switches
+#NN-SW-01:
+#  hostname: "25.25.25.1"
+#  groups:
+#    - IOS_group
+#    - north_switches
 
-NN-SW-02:
-  hostname: "25.25.25.2"
-  groups:
-    - IOS_group
-    - North_switches
+#NN-SW-02:
+#  hostname: "25.25.25.2"
+#  groups:
+#    - IOS_group
+#    - north_switches
 
-NN-SW-03:
-  hostname: "25.25.25.3"
-  groups:
-    - IOS_group
-    - North_switches
+#NN-SW-03:
+#  hostname: "25.25.25.3"
+#  groups:
+#    - IOS_group
+#    - north_switches
 
-NN-SW-04:
-  hostname: "25.25.25.4"
-  groups:
-    - IOS_group
-    - North_switches
+#NN-SW-04:
+#  hostname: "25.25.25.4"
+#  groups:
+#    - IOS_group
+#    - north_switches
 
-SS-SW-01:
-  hostname: "25.25.25.5"
-  groups:
-    - IOS_group
-    - South_switches
+#SS-SW-01:
+#  hostname: "25.25.25.5"
+#  groups:
+#    - IOS_group
+#    - south_switches
 
-SS-SW-02:
-  hostname: "25.25.25.6"
-  groups:
-    - IOS_group
-    - South_switches
+#SS-SW-02:
+#  hostname: "25.25.25.6"
+#  groups:
+#    - IOS_group
+#    - south_switches
 
-SS-SW-03:
-  hostname: "25.25.25.7"
-  groups:
-    - IOS_group
-    - South_switches    
+#SS-SW-03:
+#  hostname: "25.25.25.7"
+#  groups:
+#    - IOS_group
+#    - south_switches
 
-SS-SW-04:
-  hostname: "25.25.25.8"
-  groups:
+#SS-SW-04:
+#  hostname: "25.25.25.8"
+#  groups:
+#    - IOS_group
+#    - south_switches
+
+SB-SW-01:
+  hostname: "26.26.26.1"
+  groups: 
     - IOS_group
-    - South_switches
+    - Selby_switches
+
+SB-SW-02:
+  hostname: "26.26.26.2"
+  groups: 
+    - IOS_group
+    - Selby_switches
+
+SB-SW-03:
+  hostname: "26.26.26.3"
+  groups: 
+    - IOS_group
+    - Selby_switches
+
+SB-SW-04:
+  hostname: "26.26.26.4"
+  groups: 
+    - IOS_group
+    - Selby_switches
+
+OP-SW-01:
+  hostname: "26.26.26.5"
+  groups: 
+    - IOS_group
+    - Opus_switches
+
+OP-SW-02:
+  hostname: "26.26.26.6"
+  groups: 
+    - IOS_group
+    - Opus_switches
+
+OP-SW-03:
+  hostname: "26.26.26.7"
+  groups: 
+    - IOS_group
+    - Opus_switches
+
+OP-SW-04:
+  hostname: "26.26.26.8"
+  groups: 
+    - IOS_group
+    - Opus_switches
+...
