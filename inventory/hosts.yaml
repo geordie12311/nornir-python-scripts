@@ -82,46 +82,62 @@ SB-SW-01:
   groups: 
     - IOS_group
     - Selby_switches
+  data:
+    loopback0: "1.1.1.1"
 
 SB-SW-02:
   hostname: "26.26.26.2"
   groups: 
     - IOS_group
     - Selby_switches
+  data:
+    loopback0: "2.2.2.2"
 
 SB-SW-03:
   hostname: "26.26.26.3"
   groups: 
     - IOS_group
     - Selby_switches
+  data:
+    loopback0: "3.3.3.3"
 
 SB-SW-04:
   hostname: "26.26.26.4"
   groups: 
     - IOS_group
     - Selby_switches
+  data:
+    loopback0: "4.4.4.4"
 
 OP-SW-01:
   hostname: "26.26.26.5"
   groups: 
     - IOS_group
     - Opus_switches
+  data:
+    loopback0: "5.5.5.5"
 
 OP-SW-02:
   hostname: "26.26.26.6"
   groups: 
     - IOS_group
     - Opus_switches
+  data:
+    loopback0: "6.6.6.6"
 
 OP-SW-03:
   hostname: "26.26.26.7"
   groups: 
     - IOS_group
     - Opus_switches
+  data:
+    loopback0: "7.7.7.7"
 
 OP-SW-04:
   hostname: "26.26.26.8"
   groups: 
     - IOS_group
     - Opus_switches
+  data:
+    loopback0: "9.9.9.9"
 ...
