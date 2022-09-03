@@ -2,6 +2,7 @@
 
 IOS_group:
   platform: "ios"
+  username: "cisco"
 
 north_switches:
   platform: "ios"
