@@ -1,14 +1,17 @@
 # Python script for junior admin users to run show commands. Note: need to ensure default file username is set to jradmin
 import getpass
+import sys
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_command
 from nornir_utils.plugins.functions import print_result
 
 nr = InitNornir(config_file="config.yaml")
 #The above line is telling nornir where the config file is located
-password = getpass.getpass()
+user = input("Enter your username: ")
+password = getpass.getpass(prompt="Enter your password: ")
+nr.inventory.defaults.username = user
 nr.inventory.defaults.password = password
-#The above line is telling nornir where the config file is located
+#The above lines will prompt the user to enter their username and password and use that input to connect to the devices.
 
 commands = input ("\nEnter Commands you want to send to the devices. Ensure they are comma seperated: ")
 cmds = commands.split (",")
