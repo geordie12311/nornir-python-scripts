@@ -1,7 +1,7 @@
 """
 Script will detect duplicate IP addresses within a topology.
 """
-
+import getpass
 import logging
 import os
 from collections import Counter
@@ -10,6 +10,10 @@ from nornir_scrapli.tasks import send_command
 from rich import print as rprint
 
 nr = InitNornir(config_file="config.yaml")
+#The above line is telling nornir where the config file is located
+password = getpass.getpass(prompt="Enter your password: ")
+nr.inventory.defaults.password = password
+#The above line is telling nornir where the config file is located
 
 CLEAR = "clear"
 os.system(CLEAR)

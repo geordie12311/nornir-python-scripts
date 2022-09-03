@@ -6,6 +6,7 @@ from nornir_scrapli.tasks import send_command
 from nornir_utils.plugins.functions import print_result
 
 nr = InitNornir(config_file="config.yaml")
+#The above line is telling nornir where the config file is located
 
 nr.inventory.defaults.username = os.environ["USERNAME"]
 #above will look up the username saved in bash.rc

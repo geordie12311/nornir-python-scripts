@@ -9,8 +9,12 @@ from nornir_scrapli.tasks import send_command
 from rich import print as rprint
 
 nr = InitNornir(config_file="config.yaml")
-password = getpass.getpass()
+#The above line is telling nornir where the config file is located
+user = input("Enter your username: ")
+password = getpass.getpass(prompt="Enter your password: ")
+nr.inventory.defaults.username = user
 nr.inventory.defaults.password = password
+#The above lines will prompt the user to enter their username and password and use that input to connect to the devices.
 
 target_list = []
 

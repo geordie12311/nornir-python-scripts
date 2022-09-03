@@ -7,9 +7,12 @@ from nornir_utils.plugins.functions import print_result
 from nornir_scrapli.tasks import send_configs
 
 nr = InitNornir(config_file="config.yaml")
-password = getpass.getpass()
+#The above line is telling nornir where the config file is located
+user = input("Enter your username: ")
+password = getpass.getpass(prompt="Enter your password: ")
+nr.inventory.defaults.username = user
 nr.inventory.defaults.password = password
-#above section is going to prompt the user to put in their password
+#The above lines will prompt the user to enter their username and password and use that input to connect to the devices.
 
 def pull_structured_data(task):
     cdp_result = task.run(task=send_command, command="show cdp neighbor")

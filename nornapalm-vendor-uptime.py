@@ -7,8 +7,12 @@ from nornir_napalm.plugins.tasks import napalm_get
 from rich import print as rprint
 
 nr = InitNornir(config_file="config.yaml")
-password = getpass.getpass()
+#The above line is telling nornir where the config file is located
+user = input("Enter your username: ")
+password = getpass.getpass(prompt="Enter your password: ")
+nr.inventory.defaults.username = user
 nr.inventory.defaults.password = password
+#The above lines will prompt the user to enter their username and password and use that input to connect to the devices.
 
 def pull_interfaces_info(task):
     interfaces_result = task.run(task=napalm_get, getters=["get_facts"])

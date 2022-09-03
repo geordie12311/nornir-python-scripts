@@ -7,8 +7,12 @@ from nornir_utils.plugins.functions import print_result
 #importing netmiko send_command library
 
 nr = InitNornir(config_file="config.yaml")
-password = getpass.getpass()
+#The above line is telling nornir where the config file is located
+user = input("Enter your username: ")
+password = getpass.getpass(prompt="Enter your password: ")
+nr.inventory.defaults.username = user
 nr.inventory.defaults.password = password
+#The above lines will prompt the user to enter their username and password and use that input to connect to the devices.
 
 command_list = ["show ntp config", "show ip interface brief", "show run"]
 #using a command list to run multiple show commands

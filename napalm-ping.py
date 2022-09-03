@@ -6,9 +6,12 @@ from nornir_utils.plugins.functions import print_result
 #importing napalm_get from nornir_napalm
 
 nr = InitNornir(config_file="config.yaml")
-password = getpass.getpass()
+#The above line is telling nornir where the config file is located
+user = input("Enter your username: ")
+password = getpass.getpass(prompt="Enter your password: ")
+nr.inventory.defaults.username = user
 nr.inventory.defaults.password = password
-#above section is going to prompt the user to put in their password
+#The above lines will prompt the user to enter their username and password and use that input to connect to the devices.
 
 def ping_test(task):
     task.run(task=napalm_ping, dest="99.99.99.99")
