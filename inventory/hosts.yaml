@@ -33,46 +33,79 @@ NN-SW-01:
   hostname: "25.25.25.1"
   groups:
     - IOS_group
+<<<<<<< HEAD
     - North_switches
+=======
+    - north_switches
+>>>>>>> b9a12a3953530a6658704acc9f2a0fed66d89c0c
 
 NN-SW-02:
   hostname: "25.25.25.2"
   groups:
     - IOS_group
+<<<<<<< HEAD
     - North_switches
+=======
+    - north_switches
+>>>>>>> b9a12a3953530a6658704acc9f2a0fed66d89c0c
 
 NN-SW-03:
   hostname: "25.25.25.3"
   groups:
     - IOS_group
+<<<<<<< HEAD
     - North_switches
+=======
+    - north_switches
+>>>>>>> b9a12a3953530a6658704acc9f2a0fed66d89c0c
 
 NN-SW-04:
   hostname: "25.25.25.4"
   groups:
     - IOS_group
+<<<<<<< HEAD
     - North_switches
+=======
+    - north_switches
+>>>>>>> b9a12a3953530a6658704acc9f2a0fed66d89c0c
 
 SS-SW-01:
   hostname: "25.25.25.5"
   groups:
     - IOS_group
+<<<<<<< HEAD
     - South_switches
+=======
+    - south_switches
+>>>>>>> b9a12a3953530a6658704acc9f2a0fed66d89c0c
 
 SS-SW-02:
   hostname: "25.25.25.6"
   groups:
     - IOS_group
+<<<<<<< HEAD
     - South_switches
+=======
+    - south_switches
+>>>>>>> b9a12a3953530a6658704acc9f2a0fed66d89c0c
 
 SS-SW-03:
   hostname: "25.25.25.7"
   groups:
     - IOS_group
+<<<<<<< HEAD
     - South_switches    
+=======
+    - south_switches
+>>>>>>> b9a12a3953530a6658704acc9f2a0fed66d89c0c
 
 SS-SW-04:
   hostname: "25.25.25.8"
   groups:
     - IOS_group
+<<<<<<< HEAD
     - South_switches
+=======
+    - south_switches
+...
+>>>>>>> b9a12a3953530a6658704acc9f2a0fed66d89c0c
