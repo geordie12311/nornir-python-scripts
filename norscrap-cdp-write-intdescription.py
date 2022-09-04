@@ -1,5 +1,8 @@
-#python script using nornir_scrapli to use cdp neighbor info to automatically write descriptions on 
-#the host interfaces to show what device it connects to and which remote interface
+"""
+python script using nornir_scrapli to use cdp neighbor info to automatically write 
+descriptions on the host interfaces to show what device it connects 
+to and which remote interface
+"""
 import getpass
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_command
@@ -24,11 +27,10 @@ def pull_structured_data(task):
         remote_device = cdp_index[num]["device_id"]
         config_commands = [f"interface {local_intf}", f"description Connected to {remote_device} via its interface {remote_intf}"]
         task.run(task=send_configs, configs=config_commands)
-#above function is going to create an object called pull_structured_data
-#it is then going to send the command "show CDP neighor" to the hosts and then cycle
-#through the data to find the local, remote interfaces. It is then going to use scrapli 
-#send_configs to write the description to each interface on the host i.e. Connected to x device
-#via its interface y
+# Above function is going to create an object called pull_structured_data it is then going to send the command "show CDP neighor" to the hosts and then cycle
+# through the data to find the local, remote interfaces. It is then going to use scrapli send_configs to write the description to each interface on the host 
+# i.e. Connected to x device via its interface
+
 results = nr.run(task=pull_structured_data)
 print_result(results)
 #script is then going to output the results to the screen to verify success
