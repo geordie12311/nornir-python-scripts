@@ -1,3 +1,12 @@
-router ospf 1
-network 0.0.0.0 255.255.255.255 area 0
+cdp run
+vlan 10
+  name HR
+vlan 20
+ name Finance
+vlan 30
+ name Voice
+vlan 50
+ name Mgmt
+vlan 666
+ name black-hole
 do wr mem
