@@ -134,7 +134,7 @@ OP-SW-03:
     loopback0: "7.7.7.7"
 
 OP-SW-04:
-  hostname: "26.26.26.8"
+  hostname: "26.26.26.9"
   groups: 
     - IOS_group
     - Opus_switches
