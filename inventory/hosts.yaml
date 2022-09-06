@@ -1,4 +1,5 @@
 ---
+
 #R1:
 #     hostname: "12.12.12.2"
 #     groups:
@@ -80,64 +81,144 @@
 SB-SW-01:
   hostname: "26.26.26.1"
   groups: 
-    - IOS_group
-    - Selby_switches
+      - IOS_group
+      - Selby_switches
   data:
-    loopback0: "1.1.1.1"
+      loopback0: "1.1.1.1"
+      ospf:
+          ospf_rid: 1.1.1.1
+          ospf_process: "1"
+          ospf_networks:
+              ip1: "26.26.26.0"
+              wildcard1: "0.0.0.255"
+              area1: "0"
+              ip2: "51.51.51.0"
+              wildcard2: "0.0.0.255"
+              area2: "1"
 
 SB-SW-02:
   hostname: "26.26.26.2"
   groups: 
-    - IOS_group
-    - Selby_switches
+      - IOS_group
+      - Selby_switches
   data:
-    loopback0: "2.2.2.2"
+      loopback0: "2.2.2.2"
+      ospf:
+          ospf_rid: 2.2.2.2
+          ospf_process: "1"
+          ospf_networks:
+              ip1: "26.26.26.0"
+              wildcard1: "0.0.0.255"
+              area1: "0"
+              ip2: "52.52.52.0"
+              wildcard2: "0.0.0.255"
+              area2: "1"
 
 SB-SW-03:
   hostname: "26.26.26.3"
   groups: 
-    - IOS_group
-    - Selby_switches
+      - IOS_group
+      - Selby_switches
   data:
-    loopback0: "3.3.3.3"
+      loopback0: "3.3.3.3"
+      ospf:
+          ospf_rid: 3.3.3.3
+          ospf_process: "1"
+          ospf_networks:
+              ip1: "26.26.26.0"
+              wildcard1: "0.0.0.255"
+              area1: "0"
+              ip2: "53.53.53.0"
+              wildcard2: "0.0.0.255"
+              area2: "1"
 
 SB-SW-04:
   hostname: "26.26.26.4"
   groups: 
-    - IOS_group
-    - Selby_switches
+      - IOS_group
+      - Selby_switches
   data:
-    loopback0: "4.4.4.4"
+      loopback0: "4.4.4.4"
+      ospf:
+          ospf_rid: 4.4.4.4
+          ospf_process: "1"
+          ospf_networks:
+              ip1: "26.26.26.0"
+              wildcard1: "0.0.0.255"
+              area1: "0"
+              ip2: "54.54.54.0"
+              wildcard2: "0.0.0.255"
+              area2: "1"
 
 OP-SW-01:
   hostname: "26.26.26.5"
   groups: 
-    - IOS_group
-    - Opus_switches
+      - IOS_group
+      - Selby_switches
   data:
-    loopback0: "5.5.5.5"
+      loopback0: "5.5.5.5"
+      ospf:
+          ospf_rid: 5.5.5.5
+          ospf_process: "1"
+          ospf_networks:
+              ip1: "26.26.26.0"
+              wildcard1: "0.0.0.255"
+              area1: "0"
+              ip2: "55.55.55.0"
+              wildcard2: "0.0.0.255"
+              area2: "1"
 
 OP-SW-02:
   hostname: "26.26.26.6"
   groups: 
-    - IOS_group
-    - Opus_switches
+      - IOS_group
+      - Selby_switches
   data:
-    loopback0: "6.6.6.6"
+      loopback0: "6.6.6.6"
+      ospf:
+          ospf_rid: 6.6.6.6
+          ospf_process: "1"
+          ospf_networks:
+              ip1: "26.26.26.0"
+              wildcard1: "0.0.0.255"
+              area1: "0"
+              ip2: "56.56.56.0"
+              wildcard2: "0.0.0.255"
+              area2: "1"
 
 OP-SW-03:
   hostname: "26.26.26.7"
   groups: 
-    - IOS_group
-    - Opus_switches
+      - IOS_group
+      - Selby_switches
   data:
-    loopback0: "7.7.7.7"
+      loopback0: "7.7.7.7"
+      ospf:
+          ospf_rid: 7.7.7.7
+          ospf_process: "1"
+          ospf_networks:
+              ip1: "26.26.26.0"
+              wildcard1: "0.0.0.255"
+              area1: "0"
+              ip2: "57.57.57.0"
+              wildcard2: "0.0.0.255"
+              area2: "1"
 
 OP-SW-04:
   hostname: "26.26.26.9"
   groups: 
-    - IOS_group
-    - Opus_switches
+      - IOS_group
+      - Selby_switches
   data:
-    loopback0: "9.9.9.9"
+      loopback0: "9.9.9.9"
+      ospf:
+          ospf_rid: 9.9.9.9
+          ospf_process: "1"
+          ospf_networks:
+              ip1: "26.26.26.0"
+              wildcard1: "0.0.0.255"
+              area1: "0"
+              ip2: "59.59.59.0"
+              wildcard2: "0.0.0.255"
+              area2: "1"
 ...
