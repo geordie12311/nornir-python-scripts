@@ -1,4 +1,5 @@
 # Python script using napalm dry_run to validate configuration on hosts before being applied
+# Note: SCP server must be enabled to use Napalm (i.e. ip scp server enable)
 import getpass
 from nornir import InitNornir
 from nornir_napalm.plugins.tasks import napalm_configure
