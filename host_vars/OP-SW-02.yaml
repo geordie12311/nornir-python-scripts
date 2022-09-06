@@ -1,0 +1,15 @@
+---  
+loopback0: "6.6.6.6"
+snmp:
+    snmp_server: "20.20.20.1"
+    snmp_community: "gh-lab"
+ospf:
+    ospf_rid: 6.6.6.6
+    ospf_process: "1"
+    ospf_networks:
+        ip1: "26.26.26.0"
+        wildcard1: "0.0.0.255"
+        area1: "0"
+        ip2: "56.56.56.0"
+        wildcard2: "0.0.0.255"
+        area2: "1"
