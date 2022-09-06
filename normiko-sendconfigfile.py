@@ -14,7 +14,7 @@ nr.inventory.defaults.username = user
 nr.inventory.defaults.password = password
 #The above lines will prompt the user to enter their username and password and use that input to connect to the devices.
 
-def send_config_test(task):
+def send_config_test(task, progress_bar):
     task.run(task=netmiko_send_config, config_file="netmiko-randomconfig.txt")
 #function is sending the configuration commands in the file to the hosts
 results = nr.run(task=send_config_test)
