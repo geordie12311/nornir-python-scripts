@@ -1,0 +1,2 @@
+snmp-server community {{ host.snmp.snmp_community }} rw
+snmp-server host {{ host.snmp.snmp_server }} {{ host.snmp.snmp_community }}

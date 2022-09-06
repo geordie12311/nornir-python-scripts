@@ -85,6 +85,9 @@ SB-SW-01:
       - Selby_switches
   data:
       loopback0: "1.1.1.1"
+      snmp:
+          snmp_server: "20.20.20.1"
+          snmp_community: "gh-lab"
       ospf:
           ospf_rid: 1.1.1.1
           ospf_process: "1"
@@ -103,6 +106,9 @@ SB-SW-02:
       - Selby_switches
   data:
       loopback0: "2.2.2.2"
+      snmp:
+          snmp_server: "20.20.20.1"
+          snmp_community: "gh-lab"
       ospf:
           ospf_rid: 2.2.2.2
           ospf_process: "1"
@@ -121,6 +127,9 @@ SB-SW-03:
       - Selby_switches
   data:
       loopback0: "3.3.3.3"
+      snmp:
+          snmp_server: "20.20.20.1"
+          snmp_community: "gh-lab"
       ospf:
           ospf_rid: 3.3.3.3
           ospf_process: "1"
@@ -139,6 +148,9 @@ SB-SW-04:
       - Selby_switches
   data:
       loopback0: "4.4.4.4"
+      snmp:
+          snmp_server: "20.20.20.1"
+          snmp_community: "gh-lab"
       ospf:
           ospf_rid: 4.4.4.4
           ospf_process: "1"
@@ -157,6 +169,9 @@ OP-SW-01:
       - Selby_switches
   data:
       loopback0: "5.5.5.5"
+      snmp:
+          snmp_server: "20.20.20.1"
+          snmp_community: "gh-lab"
       ospf:
           ospf_rid: 5.5.5.5
           ospf_process: "1"
@@ -175,6 +190,9 @@ OP-SW-02:
       - Selby_switches
   data:
       loopback0: "6.6.6.6"
+      snmp:
+          snmp_server: "20.20.20.1"
+          snmp_community: "gh-lab"
       ospf:
           ospf_rid: 6.6.6.6
           ospf_process: "1"
@@ -193,6 +211,9 @@ OP-SW-03:
       - Selby_switches
   data:
       loopback0: "7.7.7.7"
+      snmp:
+          snmp_server: "20.20.20.1"
+          snmp_community: "gh-lab"
       ospf:
           ospf_rid: 7.7.7.7
           ospf_process: "1"
@@ -211,6 +232,9 @@ OP-SW-04:
       - Selby_switches
   data:
       loopback0: "9.9.9.9"
+      snmp:
+          snmp_server: "20.20.20.1"
+          snmp_community: "gh-lab"
       ospf:
           ospf_rid: 9.9.9.9
           ospf_process: "1"
