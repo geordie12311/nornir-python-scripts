@@ -1,0 +1,4 @@
+ntp server 77.77.77.77
+ntp server 33.33.33.33
+snmp-server community NAPALMTEST RO
+logging host 1.2.3.4
