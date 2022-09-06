@@ -1,8 +1,10 @@
 ---
 loopback0: "3.3.3.3"
+
 snmp:
     snmp_server: "20.20.20.1"
     snmp_community: "gh-lab"
+
 ospf:
     ospf_rid: 3.3.3.3
     ospf_process: "1"
@@ -13,3 +15,7 @@ ospf:
         ip2: "53.53.53.0"
         wildcard2: "0.0.0.255"
         area2: "1"
+
+country: UK
+region: North_Yorkshire
+business_unit: Drax
