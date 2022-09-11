@@ -20,51 +20,55 @@ Opus_switches:
     ntp_server: "4.4.4.4"
 
 grand_slam_winner:
-  data:
-    legend: True
-    won: 4
+    data:
+        legend: True
+        won: 4
 
 tennis_player:
-  data:
-    racket: True
-    location: court 
+    data:
+        racket: True
+        location: court
 
 athlete:
-  data:
-    fit: True
-    diet: healthy 
+    data:
+        fit: True
+        diet: healthy
 
 actor:
-  data:
-    location: netflix
+    data:
+        location: netflix
 
 actress:
-  data:
-    location: netflix
+    data:
+        location: netflix
+
 
 nobel_prize_winner:
-  data:
-    legend: True
+    data:
+        legend: True
+
 
 famous:
-  data:
-    well-known: True   
-    followers: paparazzi 
+    data:
+        well-known: True
+        followers: paparazzi
+
 
 begins_with_a_J:
-  data:
-    starts_with: consonant  
-    first_letter_vowel: False
+    data:
+        starts_with: consonant
+        first_letter_vowel: False
 
 human:
-  data:
-    homosapien: True
-    rights: human
+    data:
+        homosapien: True
+        rights: human
 
 non-human:
-  data:
-    homosapien: False
-    rights: animal
+    data:
+         homosapien: False
+         rights: animal
+
 
 
 
