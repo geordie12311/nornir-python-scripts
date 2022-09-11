@@ -245,4 +245,114 @@ OP-SW-04:
               ip2: "59.59.59.0"
               wildcard2: "0.0.0.255"
               area2: "1"
-...
+
+tiger_woods:
+  hostname: "27.27.27.1"
+  groups: 
+      - grand_slam_winner
+      - athlete
+      - famous
+      - human
+  data:
+      sex: male
+      age: 44
+      married: False
+
+meryl_streep:
+  hostname: "27.27.27.2"
+  groups: 
+      - actress
+      - famous
+      - human
+  data:
+      sex: female
+      age: 70
+      married: True
+
+andy_murray:
+  hostname: "27.27.27.3"
+  groups: 
+      - tennis_player
+      - athlete
+      - famous
+      - human
+  data:
+      sex: male
+      age: 32
+      married: True
+
+harambe:
+  hostname: "27.27.27.4"
+  groups: 
+      - non-human
+      - famous
+  data:
+      sex: male
+      age: 17
+      married: False
+
+marie_curie:
+  hostname: "27.27.27.5"
+  groups: 
+      - famous
+      - human
+      - nobel_prize_winner
+  data:
+      sex: female
+      age: 144
+      married: True
+
+nala_cat:
+  hostname: "27.27.27.6"
+  groups: 
+      - famous
+      - non-human
+  data:
+      sex: female
+      age: 9
+      married: False
+
+joaquin_P:
+  hostname: "27.27.27.7"
+  groups: 
+      - famous
+      - actor
+      - human
+      - begins_with_a_J
+  data:
+      sex: male
+      age: 45
+      married: False
+
+geordie:
+  hostname: "27.27.27.8"
+  groups: 
+       - human
+  data:
+      sex: male
+      age: 58
+      married: True
+
+JK_rowling:
+  hostname: "27.27.27.9"
+  groups: 
+       - human
+       - famous
+       - begins_with_a_J
+  data:
+      sex: female
+      age: 54
+      married: True
+
+roger_federer:
+  hostname: "27.27.27.10"
+  groups: 
+       - grand_slam_winner
+       - tennis_player
+       - athlete
+       - human
+       - famous
+  data:
+      sex: male
+      age: 38
+      married: True
