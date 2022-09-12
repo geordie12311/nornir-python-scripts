@@ -1,11 +1,13 @@
 # Python script that will load variables from host specific var files held in host_vars,
 # use a Jinja2 template to send OSPF configuration from those host specific files to the hosts
+# script also includes a progress bar using tqdm
 import getpass
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_configs
 from nornir_utils.plugins.functions import print_result
 from nornir_jinja2.plugins.tasks import template_file
 from nornir_utils.plugins.tasks.data import load_yaml
+from tqdm import tqdm
 
 nr = InitNornir(config_file="config1.yaml")
 #The above line is telling nornir where the config file is located
@@ -15,8 +17,9 @@ nr.inventory.defaults.username = user
 nr.inventory.defaults.password = password
 #The above lines will prompt the user to enter their username and password and use that input to connect to the devices
 
-def load_vars(task):
-# above line is creating a function called load_vars
+def load_vars(task, progress_bar):
+    progress_bar.update()
+# above line is creating a function called load_vars and also a progress bar
     data = task.run(task=load_yaml, file=f"./host_vars/{task.host}.yaml")
 # above line is creating a variable called data and linking it to the host specific yaml files in host_vars folder
     task.host["facts"] = data.result
@@ -37,7 +40,10 @@ def ospf_template(task):
     task.run(task=send_configs, configs=configuration)
 # above line is going to use task.run to call send_configs and send the config from the configuration variable 
 
-results = nr.run(task=load_vars)
+with tqdm(total=len(nr.inventory.hosts)) as progress_bar:
+    results = nr.run(task=load_vars, progress_bar=progress_bar)
+# above is going to use tqdm to create a progress bar to show script progress as it pushes the config out to each host
+
 print_result(results)
 # finally we are creating the variable results which is going to collate the results of the test_template function
 # and print the results to screen

@@ -1,10 +1,11 @@
-cdp run
-vlan 10
-  name HR
-vlan 20
- name Finance
-vlan 30
- name Voice
-vlan 666
- name black-hole
-do wr mem
+en
+conf t
+router bgp 65001
+bgp redistribute-internal
+!
+do wr
+!
+exit
+!
+end
+!
