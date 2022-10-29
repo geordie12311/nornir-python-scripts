@@ -1,0 +1,47 @@
+NN-SW-01:
+  hostname: "20.20.20.1"
+  groups:
+    - IOS_group
+    - north_switches
+
+NN-SW-02:
+  hostname: "20.20.20.2"
+  groups:
+    - IOS_group
+    - north_switches
+
+NN-SW-03:
+  hostname: "20.20.20.3"
+  groups:
+    - IOS_group
+    - north_switches
+
+NN-SW-04:
+  hostname: "20.20.20.4"
+  groups:
+    - IOS_group
+    - north_switches
+
+SS-SW-01:
+  hostname: "20.20.20.5"
+  groups:
+    - IOS_group
+    - south_switches
+
+SS-SW-02:
+  hostname: "20.20.20.6"
+  groups:
+    - IOS_group
+    - south_switches
+
+SS-SW-03:
+  hostname: "20.20.20.7"
+  groups:
+    - IOS_group
+    - south_switches
+
+SS-SW-04:
+  hostname: "20.20.20.8"
+  groups:
+    - IOS_group
+    - south_switches

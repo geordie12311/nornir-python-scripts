@@ -5,7 +5,7 @@ from nornir_netmiko.tasks import netmiko_send_config
 from nornir_utils.plugins.functions import print_result
 #importing netmiko send_config library
 
-nr = InitNornir(config_file="config.yaml")
+nr = InitNornir(config_file="config2.yaml")
 #The above line is telling nornir where the config file is located
 user = input("Enter your username: ")
 password = getpass.getpass(prompt="Enter your password: ")
@@ -16,7 +16,8 @@ nr.inventory.defaults.password = password
 def send_config_test(task):
     task.run(task=netmiko_send_config, config_commands=[
             "lldp run", 
-            "username test1 priv 15 secret test123"
+            "cdp run",
+            "do wr"
             ])
 #function is sending the configuration commands to the hosts
 results = nr.run(task=send_config_test)

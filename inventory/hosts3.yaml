@@ -1,0 +1,5 @@
+SB-SW-01:
+    hostname: "26.26.26.1"
+    groups:
+      - IOS_group
+      - south_switches

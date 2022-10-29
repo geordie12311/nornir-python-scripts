@@ -1,6 +1,7 @@
 """
 Script to create a Ping report using Rich
 """
+
 import os
 import time
 from datetime import date
