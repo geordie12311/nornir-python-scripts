@@ -32,14 +32,18 @@ def send_config_test(task):
         f"switchport access vlan {vlanid}",
         f"switchport voice vlan {voicevlan}",
         "do wr mem"])
-
-#function is sending the configuration commands to the hosts
+#The function above is sending the configuration commands to the hosts based on the user inputted data
 
 def show_vlan(task):
     task.run(task=netmiko_send_command, command_string="show vlan")
-              
+#The function above is sending a show command string to get the output of Show VLAN after the configuration changes     
+
 config_results = nr.run(task=send_config_test)
 vlan_results = nr.run(task=show_vlan)
+#The above section is creating result objects relating to the functions
+#which will be used later to print the results on screen
+
 print_result(config_results)
 print_result(vlan_results)
-#setting the object results to output of the send_config_test function
+#The print objects results are now outputted on the screen so the 
+#user can see the commands sent and resulting changes to the VLANs
