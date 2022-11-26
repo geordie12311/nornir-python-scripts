@@ -23,18 +23,18 @@ passPrompt = "Enter your password: "
 targetPrompt = "list the hosts you want to configure, (comma separated list): "
 cmdPrompt = "Configuration commands to send, (comma separated list):  "
 
-#logging into the device(s) using user input name/password
+#logging into the device(s) using user inputted name/password credentials
 userName = input(userNamePrompt)
 password = getpass.getpass(passPrompt)
 nr.inventory.defaults.username = userName
 nr.inventory.defaults.password = password
 
-#using the user input target devices and commands
+#using the user inputted target device(s) and commands
 target = input(targetPrompt)
 cmds = input(cmdPrompt)
 
-#filering the hosts and sending the commands split by line 
-#using the , as the delimiter
+#filering for the hosts and sending the commands split by line 
+#using the comma as the delimiter
 filtered_hosts = FFun(nr, FL=target)
 output = filtered_hosts.run(send_configs, configs=cmds.split(","))
 
