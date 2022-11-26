@@ -11,10 +11,8 @@ from nornir_utils.plugins.functions import print_result #importing print_result 
 
 nr = InitNornir(config_file="config.yaml") #Initiating Nornir using config.yaml as configuration file
 
-
 userNamePrompt = "Enter your username: " #creating object for username prompt
 passPrompt = "Enter your password: " #creating object for password prompt
-
 
 targetPrompt = "list the hosts you want to configure, (comma separated list): "#promting user to enter host(s) details
 cmdPrompt = "Configuration commands to send, (comma separated list):  "#promting user to enter command(s) to send to host(s)
