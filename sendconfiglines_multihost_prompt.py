@@ -14,7 +14,7 @@ nr = InitNornir(config_file="config.yaml") #Initiating Nornir using config.yaml 
 userNamePrompt = "Enter your username: " #creating object for username prompt
 passPrompt = "Enter your password: " #creating object for password prompt
 
-targetPrompt = "Enter the hostnames you want to configure, (comma separated list): "#promting user to enter host(s) details
+targetPrompt = "Enter the hostnames of the devices you want to configure, (comma separated list): "#promting user to enter host(s) details
 cmdPrompt = "Configuration commands to send, (comma separated list):  "#promting user to enter command(s) to send to host(s)
 
 userName = input(userNamePrompt) #using user inputted username to pass username to host(s)
