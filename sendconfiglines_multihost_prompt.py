@@ -6,7 +6,7 @@ and also the list of configuration commands """
 import getpass #importing getpass to handle the password for the hosts
 from nornir import InitNornir #using nornir so importing InitNornir to initiate the script
 from nornir_scrapli.tasks import send_configs # importing scrapli to send configuration commands
-from nornir_salt.plugins.functions import FFun #importing FFun for filtering
+from nornir_salt.plugins.functions import FFun #importing FFun from salt for filtering hosts
 from nornir_utils.plugins.functions import print_result #importing print_result to print the results to screen
 
 nr = InitNornir(config_file="config.yaml") #Initiating Nornir using config.yaml as configuration file
