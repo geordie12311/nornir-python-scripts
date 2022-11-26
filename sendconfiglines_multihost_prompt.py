@@ -30,5 +30,5 @@ cmds = input(cmdPrompt) # using user inputted commands to send to hosts
 filtered_hosts = FFun(nr, FL=target) # using FFun filter to filter the hosts
 output = filtered_hosts.run(send_configs, configs=cmds.split(",")) #splitting the commands using the comma as the delimiter
 
-results = (output)
-print_result(results) #printing out the results
+results = (output) #creating results object to capture output from the task
+print_result(results) #printing out the results from the task
