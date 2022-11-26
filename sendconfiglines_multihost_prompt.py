@@ -15,7 +15,7 @@ userNamePrompt = "Enter your username: " #creating object for username prompt
 passPrompt = "Enter your password: " #creating object for password prompt
 
 targetPrompt = "Enter the hostnames of the devices you want to configure, (comma separated list): "#promting user to enter host(s) details
-cmdPrompt = "Configuration commands to send, (comma separated list):  "#promting user to enter command(s) to send to host(s)
+cmdPrompt = "Enter the configuration commands to send to the hosts, (comma separated list):  "#promting user to enter command(s) to send to host(s)
 
 userName = input(userNamePrompt) #using user inputted username to pass username to host(s)
 password = getpass.getpass(passPrompt) #using getpass to pass the password to host(s)
