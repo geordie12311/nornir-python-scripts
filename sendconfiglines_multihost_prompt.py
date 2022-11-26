@@ -19,8 +19,11 @@ nr = InitNornir(config_file="config.yaml")
 Prompting user for username
 and password. Using getpass for password
 """
-user = input("Enter your username: ")
-password = getpass.getpass(prompt="Enter your password: ")
+usernamePrompt = "Enter your username: "
+passPrompt = "Enter your password: "
+
+user = input(usernamePrompt)
+password = getpass.getpass(passPrompt)
 nr.inventory.defaults.username = user
 nr.inventory.defaults.password = password
 
