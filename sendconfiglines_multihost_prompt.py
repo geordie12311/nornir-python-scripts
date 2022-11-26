@@ -22,9 +22,9 @@ and password. Using getpass for password
 userNamePrompt = "Enter your username: "
 passPrompt = "Enter your password: "
 
-user = input(userNamePrompt)
+userName = input(userNamePrompt)
 password = getpass.getpass(passPrompt)
-nr.inventory.defaults.username = user
+nr.inventory.defaults.username = userName
 nr.inventory.defaults.password = password
 
 """
