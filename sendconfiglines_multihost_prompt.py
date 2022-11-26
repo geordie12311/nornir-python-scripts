@@ -3,8 +3,8 @@ to send a set of configuration commands to a set of hosts. Script will prompt
 the user to provide credentials and the hostnames they want to configure
 and also the list of configuration commands """
 
-import getpass
-from nornir import InitNornir
+import getpass #importing getpass to handle the password for the hosts
+from nornir import InitNornir #using nornir so importing InitNornir to initiate the script
 from nornir_scrapli.tasks import send_configs # importing scrapli to send configuration commands
 from nornir_salt.plugins.functions import FFun #importing FFun for filtering
 from nornir_utils.plugins.functions import print_result #importing print_result to print the results to screen
