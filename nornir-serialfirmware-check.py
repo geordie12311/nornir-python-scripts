@@ -22,6 +22,9 @@ password = getpass.getpass(passPrompt) #using getpass to pass the password to ho
 nr.inventory.defaults.username = userName #using userName input for username to login
 nr.inventory.defaults.password = password #using password input for password to authenticate
 
+host_table_header = ["Hostname", "Serial Number", "Version"]
+check_table_header = ["Pass", "Fail"]
+
 ### Functional Script section:
 def pull_data(task):
     ver_result = task.run(task=send_command, command="show version") #using scrapli to send the command
@@ -39,5 +42,9 @@ def pull_data(task):
     else:
         time.sleep(1) #sleeping for 1sec
         rprint(f"{task.host}: CHECK VERSION is: {version}. [red]CHECK FAILED![/red]") #if version does not pass validation printing check failed
-        
+    
+    with open("host_serial_version.csv", "w") as file:
+        writer = csv.writer()
+        writer.writerow(host_table_header)
+        writer.writerow(f"{task.host}, {serial_num}, {version}")
 result = nr.run(task=pull_data) #printing the output from the pull_data function to the screen
