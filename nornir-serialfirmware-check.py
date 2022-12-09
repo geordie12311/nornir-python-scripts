@@ -13,6 +13,7 @@ from rich import print as rprint #importing print from rich to provide a more co
 
 nr = InitNornir(config_file="config3.yaml") #Initiating Nornir using config.yaml as configuration file
 
+
 ### User credential section:
 userNamePrompt = "Enter your username: " #creating object for username prompt
 passPrompt = "Enter your password: " #creating object for password prompt
@@ -22,8 +23,6 @@ password = getpass.getpass(passPrompt) #using getpass to pass the password to ho
 nr.inventory.defaults.username = userName #using userName input for username to login
 nr.inventory.defaults.password = password #using password input for password to authenticate
 
-host_table_header = ["Hostname", "Serial Number", "Version"]
-check_table_header = ["Pass", "Fail"]
 
 ### Functional Script section:
 def pull_data(task):
@@ -32,7 +31,7 @@ def pull_data(task):
     version = task.host["facts"]["version"]["version"] #using the data in the facts object to pull out the version
     uptime = task.host["facts"]["version"]["uptime"] #using the data in the facts object to pull out the uptime
     serial_num = task.host["facts"]["version"]["chassis_sn"] #using the data in the facts object to pull out serial number
- 
+    
     rprint(f"{task.host} serial number is: {serial_num}. Firmware version is: {version}.") #printing the outputs
     time.sleep(1) #sleeping for 1sec
 
@@ -43,8 +42,4 @@ def pull_data(task):
         time.sleep(1) #sleeping for 1sec
         rprint(f"{task.host}: CHECK VERSION is: {version}. [red]CHECK FAILED![/red]") #if version does not pass validation printing check failed
     
-    with open("host_serial_version.csv", "w") as file:
-        writer = csv.writer()
-        writer.writerow(host_table_header)
-        writer.writerow(f"{task.host}, {serial_num}, {version}")
 result = nr.run(task=pull_data) #printing the output from the pull_data function to the screen
