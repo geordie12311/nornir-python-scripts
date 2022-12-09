@@ -1,5 +1,39 @@
-SB-SW-01:
-    hostname: "26.26.26.1"
+vIOS1:
+    hostname: "23.23.23.1"
     groups:
       - IOS_group
-      - south_switches
+
+vIOS2:
+    hostname: "23.23.23.2"
+    groups:
+      - IOS_group
+
+vIOS3:
+    hostname: "23.23.23.3"
+    groups:
+      - IOS_group
+
+vIOS4:
+    hostname: "23.23.23.4"
+    groups:
+      - IOS_group
+
+vIOS5:
+    hostname: "23.23.23.5"
+    groups:
+      - IOS_group
+
+vIOS6:
+    hostname: "23.23.23.6"
+    groups:
+      - IOS_group
+
+vIOS7:
+    hostname: "23.23.23.7"
+    groups:
+      - IOS_group
+
+vIOS8:
+    hostname: "23.23.23.8"
+    groups:
+      - IOS_group
