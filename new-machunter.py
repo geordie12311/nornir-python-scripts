@@ -1,5 +1,8 @@
 """
-Python Script to locate MAC address on the network
+Python Script to locate MAC address on the network.
+This script is intended to work on Cisco IOS and IOS-XE devices.
+Due to an issue with the Genie parsers ensure your Nornir inventory
+platform is set to 'cisco_xe' - even if the device is regular IOS.
 """
 import os
 from nornir import InitNornir
