@@ -1,0 +1,104 @@
+service password-encryption
+no mop enabled
+no mop sysid
+no service pad
+no ip-forward-protocol nd
+no ip source-route
+ip dhcp bootp ignore
+clock timezone CET 1 0
+clock summer-time CEST recurring last Sun Mar 2:00 last Sun Oct 3:00
+service timestamps log datetime localtime show-timezone
+logging buffered 4096
+no ip http server
+no ip http secure-server
+no ip domain-lookup
+no ip bootp server
+no service call-home
+ip domain name gh-lab.com
+login on-success log
+subscriber templating
+multilink bundle-name authenticated
+service timestamps debug datetime msec
+service timestamps log datetime msec
+platform qfp utilization monitor load 80
+platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR1_test
+username cisco priv 15 password cisco123
+!
+interface Loopback0
+ ip address {{ loopback0_address }} 255.255.255.255
+!
+interface GigabitEthernet1
+ description mgmt-interface
+ ip address {{ interfaces.GigEth1.ip_add }} {{ interfaces.GigEth1.sub_mask }}
+ {{ task.host.interfaces.GigEth1.int_state }}
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet2
+ ip address {{ interfaces.GigEth1.ip_add }} {{interfaces.GigEth1.sub_mask}}
+ negotiation auto
+ {{ interfaces.GigEth2.int_state }}
+ no mop enabled
+ no mop sysid
+!
+ interface GigabitEthernet3
+ ip address {{ interfaces.GigEth3.ip_add }} {{ interfaces.GigEth3.sub_mask }}
+ negotiation auto
+ {{ interfaces.GigEth3.int_state }}
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet4
+ ip address {{ interfaces.GigEth4.ip_add }} {{ interfaces.GigEth4.sub_mask }}
+ {{ interfaces.GigEth4.int_state }}
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+!
+ router ospf {{ ospf.process }}
+ router-id {{ ospf.rid }}
+{% for ntwk in ospf.networks %}
+ network {{ ntwk.network }} {{ ntwk.wildcard }} area {{ ntwk.area }}
+{% endfor %}
+{% if ospf.default_originate == true %}
+ default-information originate
+{% endif %}
+ !
+ !
+ router bgp {{ bgp.asn }}
+ bgp router-id {{ bgp.rid }}
+{% for neigh in bgp.neighbors %}
+ neighbor {{ neigh.neighbor }} remote-as {{ neigh.peer_asn }}
+{% endfor %}
+{% if bgp.networks is defined %}
+{% for ntwk in bgp.networks %}
+ network {{ ntwk.network }} mask {{ ntwk.mask }}
+{% endfor %}
+{% endif %}
+ bgp log-neighbor-changes
+!
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+!
+ip route 140.140.1.0 255.255.255.0 140.140.1.100
+ip route 140.140.1.0 255.255.255.0 GigabitEthernet1
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ login local
+ transport input ssh
+!
+exit
+!
+wr mem
+!
+end

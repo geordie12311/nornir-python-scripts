@@ -1,0 +1,45 @@
+---
+
+hostname: "CSR1"
+
+loopback0_address: "1.1.1.1"
+loopback1_address: "99.99.99.99"
+
+snmp:
+    snmp_server: "20.20.20.1"
+    snmp_community: "gh-lab"
+
+ospf:
+    rid: 1.1.1.1
+    networks:
+        process: "1"
+        network: "21.21.21.0"
+        wildcard: "0.0.0.255"
+        ntwk.area: "0"
+
+Interfaces:
+    GigEth1:
+        ip_add: "21.21.21.1"
+        sub_mask: "255.255.255.0"
+        int_state: "no shutdown"
+    GigEth2:
+        ip_add: "50.50.52.1"
+        sub_mask: "255.255.255.0"
+        int_state: "no shutdown"
+    GigEth3:
+        ip_add: "50.50.54.1"
+        sub_mask: "255.255.255.0"
+        int_state: "no shutdown"
+    GigEth4:
+        ip_add: ""
+        sub_mask: ""
+        int_state: "shutdown"
+
+bgp:
+  asn: "65001"
+  rid: "1.1.1.1"
+  neighbors:
+      neighbor1: "50.50.52.2"
+      peer_asn1: "65001"     
+      neighbor2: "50.50.54.2"
+      peer_asn2: "65001"
