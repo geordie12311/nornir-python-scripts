@@ -12,7 +12,7 @@ from nornir_netmiko.tasks import netmiko_send_config, netmiko_send_command
 from nornir_utils.plugins.functions import print_result
 #importing netmiko send_config library
 
-nr = InitNornir(config_file="config3.yml")
+nr = InitNornir(config_file="config.yaml")
 #The above line is telling nornir where the config file is located
 user = input("Please enter your username: ")
 password = getpass.getpass(prompt="Please enter your password: ")
