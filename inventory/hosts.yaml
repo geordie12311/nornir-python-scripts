@@ -78,26 +78,26 @@ SS-SW-04:
     - IOS_group
     - south_switches
 
-SB-SW-01:
-  hostname: "26.26.26.1"
-  groups: 
-      - IOS_group
-      - Selby_switches
-  data:
-      loopback0: "1.1.1.1"
-      snmp:
-          snmp_server: "20.20.20.1"
-          snmp_community: "gh-lab"
-      ospf:
-          ospf_rid: 1.1.1.1
-          ospf_process: "1"
-          ospf_networks:
-              ip1: "26.26.26.0"
-              wildcard1: "0.0.0.255"
-              area1: "0"
-              ip2: "51.51.51.0"
-              wildcard2: "0.0.0.255"
-              area2: "1"
+#SB-SW-01:
+#  hostname: "26.26.26.1"
+#  groups: 
+#      - IOS_group
+#      - Selby_switches
+#  data:
+#      loopback0: "1.1.1.1"
+#      snmp:
+#          snmp_server: "20.20.20.1"
+#          snmp_community: "gh-lab"
+#      ospf:
+#          ospf_rid: 1.1.1.1
+#          ospf_process: "1"
+#          ospf_networks:
+#              ip1: "26.26.26.0"
+#              wildcard1: "0.0.0.255"
+#              area1: "0"
+#              ip2: "51.51.51.0"
+#              wildcard2: "0.0.0.255"
+#              area2: "1"
 
 SB-SW-02:
   hostname: "26.26.26.2"

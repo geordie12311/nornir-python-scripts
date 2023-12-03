@@ -3,10 +3,10 @@ Script to automatically add interface descriptions using LLDP
 """
 import getpass
 from nornir import InitNornir
-from nornir.plugins.functions.text import print_result
-from nornir.plugins.tasks.networking import netmiko_send_command, netmiko_send_config
+from nornir_utils.plugins.functions import print_result
+from nornir_netmiko.tasks import netmiko_send_config, netmiko_send_command
 
-nr = InitNornir(config_file="config.yaml")
+nr = InitNornir(config_file="config6.yaml")
 user = input("Enter your username: ")
 password = getpass.getpass(prompt="Enter your password: ")
 nr.inventory.defaults.username = user

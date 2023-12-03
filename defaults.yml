@@ -1,0 +1,6 @@
+---
+connection_options:
+  scrapli:
+    extras:
+      auth_strict_key: false
+...

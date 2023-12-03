@@ -12,7 +12,7 @@ from nornir_netmiko.tasks import netmiko_send_config, netmiko_send_command
 from nornir_utils.plugins.functions import print_result
 #importing netmiko send_config library
 
-nr = InitNornir(config_file="config.yaml")
+nr = InitNornir(config_file="config6.yaml")
 #The above line is telling nornir where the config file is located
 user = input("Please enter your username: ")
 password = getpass.getpass(prompt="Please enter your password: ")
@@ -28,7 +28,7 @@ voicevlan = input("Please enter the Voice VLAN you wish to enable on the port or
 
 def send_config_test(task):
     task.run(task=netmiko_send_config, config_commands=[
-        f"interface ethernet{switchport}",
+        f"interface GigabitEthernet{switchport}",
         f"switchport access vlan {vlanid}",
         f"switchport voice vlan {voicevlan}",
         "do wr mem"])

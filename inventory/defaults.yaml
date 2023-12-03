@@ -1,2 +1,7 @@
 ---
 platform: "ios"
+connection_options:
+    scrapli:
+        extras:
+            auth_strict_key: false
+            transport_options: {"open_cmd": ["-o", "KexAlgorithms=+diffie-hellman-group1-sha1"]}

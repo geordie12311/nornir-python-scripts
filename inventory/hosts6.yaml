@@ -1,0 +1,145 @@
+---
+
+NN-SW-01:
+  hostname: "20.20.20.1"
+  groups: 
+      - IOS_group
+      - Selby_switches
+  data:
+      loopback0: "1.1.1.1"
+      snmp:
+          snmp_server: "20.20.20.1"
+          snmp_community: "gh-lab"
+      ospf:
+          ospf_rid: 1.1.1.1
+          ospf_process: "1"
+          ospf_networks:
+              ip1: "20.20.20.0"
+              wildcard1: "0.0.0.255"
+              area1: "0"
+
+NN-SW-02:
+  hostname: "20.20.20.2"
+  groups: 
+      - IOS_group
+      - Selby_switches
+  data:
+      loopback0: "2.2.2.2"
+      snmp:
+          snmp_server: "20.20.20.1"
+          snmp_community: "gh-lab"
+      ospf:
+          ospf_rid: 2.2.2.2
+          ospf_process: "1"
+          ospf_networks:
+              ip1: "20.20.20.0"
+              wildcard1: "0.0.0.255"
+              area1: "0"
+
+NN-SW-03:
+  hostname: "20.20.20.3"
+  groups: 
+      - IOS_group
+      - Selby_switches
+  data:
+      loopback0: "3.3.3.3"
+      snmp:
+          snmp_server: "20.20.20.3"
+          snmp_community: "gh-lab"
+      ospf:
+          ospf_rid: 3.3.3.3
+          ospf_process: "1"
+          ospf_networks:
+              ip1: "20.20.20.0"
+              wildcard1: "0.0.0.255"
+              area1: "0"
+
+NN-SW-04:
+  hostname: "20.20.20.4"
+  groups: 
+      - IOS_group
+      - Selby_switches
+  data:
+      loopback0: "4.4.4.4"
+      snmp:
+          snmp_server: "20.20.20.4"
+          snmp_community: "gh-lab"
+      ospf:
+          ospf_rid: 4.4.4.4
+          ospf_process: "1"
+          ospf_networks:
+              ip1: "20.20.20.0"
+              wildcard1: "0.0.0.255"
+              area1: "0"
+
+SS-SW-01:
+  hostname: "20.20.20.5"
+  groups: 
+      - IOS_group
+      - Selby_switches
+  data:
+      loopback0: "5.5.5.5"
+      snmp:
+          snmp_server: "20.20.20.5"
+          snmp_community: "gh-lab"
+      ospf:
+          ospf_rid: 5.5.5.5
+          ospf_process: "1"
+          ospf_networks:
+              ip1: "20.20.20.0"
+              wildcard1: "0.0.0.255"
+              area1: "0"
+
+SS-SW-02:
+  hostname: "20.20.20.6"
+  groups: 
+      - IOS_group
+      - Selby_switches
+  data:
+      loopback0: "6.6.6.6"
+      snmp:
+          snmp_server: "20.20.20.6"
+          snmp_community: "gh-lab"
+      ospf:
+          ospf_rid: 6.6.6.6
+          ospf_process: "1"
+          ospf_networks:
+              ip1: "20.20.20.0"
+              wildcard1: "0.0.0.255"
+              area1: "0"
+
+SS-SW-03:
+  hostname: "20.20.20.6"
+  groups: 
+      - IOS_group
+      - Selby_switches
+  data:
+      loopback0: "7.7.7.7"
+      snmp:
+          snmp_server: "20.20.20.6"
+          snmp_community: "gh-lab"
+      ospf:
+          ospf_rid: 7.7.7.7
+          ospf_process: "1"
+          ospf_networks:
+              ip1: "20.20.20.0"
+              wildcard1: "0.0.0.255"
+              area1: "0"
+
+SS-SW-04:
+  hostname: "20.20.20.6"
+  groups: 
+      - IOS_group
+      - Selby_switches
+  data:
+      loopback0: "10.10.10.10"
+      snmp:
+          snmp_server: "20.20.20.8"
+          snmp_community: "gh-lab"
+      ospf:
+          ospf_rid: 10.10.10.10
+          ospf_process: "1"
+          ospf_networks:
+              ip1: "20.20.20.0"
+              wildcard1: "0.0.0.255"
+              area1: "0"

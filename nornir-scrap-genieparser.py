@@ -7,7 +7,7 @@ from nornir_scrapli.functions import print_structured_result
 from nornir_utils.plugins.functions import print_result
 import ipdb
 
-nr = InitNornir(config_file="config.yaml")
+nr = InitNornir(config_file="config6.yaml")
 #The above line is telling nornir where the config file is located
 user = input("Enter your username: ")
 password = getpass.getpass(prompt="Enter your password: ")
