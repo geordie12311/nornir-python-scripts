@@ -1,0 +1,13 @@
+---
+    inventory:
+       plugin: SimpleInventory
+       options:
+           host_file: "inventory/labsw-hosts.yml"
+           group_file: "inventory/groups.yaml"
+           defaults_file: "inventory/defaults.yaml"
+
+    runner: 
+        plugin: threaded
+        options:
+            num_workers: 50
+

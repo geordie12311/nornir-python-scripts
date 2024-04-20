@@ -8,11 +8,11 @@ from scrapli.driver.core import IOSXEDriver #importing IOSXEDriver from scrapli
 
 devices = [
     {
-        "host": "NN-SW-01",
+        "host": "lab-sw1",
         "auth_username": "cisco",
         "auth_password": "cisco123",
         "auth_strict_key": False,
-        "ssh_config_file": True,
+        "ssh_config_file": True
     }    
 ]
 # above, creating an object called devices to hold the hostname and credentials that scrapli will use to connect
