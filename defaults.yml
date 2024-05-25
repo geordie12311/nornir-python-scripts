@@ -1,6 +1,7 @@
----
+—--
 connection_options:
   scrapli:
+    port: 22
     extras:
-      auth_strict_key: false
-...
+      auth_strict_key: False
+Code Walk-Through
